@@ -14,7 +14,7 @@ lst = [int(i) for i in input().split()]
 res = sorted(lst)
 length = len(res)
 for j in range(0, length):
-    for k in range(j, length):
+    for k in range(j+1, length):
         if prime_together(res[j], res[k]):
             print(res[j], end=' ')
             print(res[k])
