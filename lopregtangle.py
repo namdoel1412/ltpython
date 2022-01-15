@@ -19,16 +19,18 @@ class Rectangle:
         res = ""
         for i in range(0, length):
             if i == 0:
-                res+= str(self.mau[i]+"").upper()
+                res+= str(self.mau[i]).upper()
             else:
                 res+=self.mau[i]
         return res
 
-
-if __name__ == '__main__':
-    arr = input().split()
-    if len(arr) > 3:
-        print('INVALID')
-    else:
-        r = Rectangle(int(arr[0]), int(arr[1]), str(arr[2]))
-        print('{} {} {}'.format(r.perimeter(), r.area(), r.color()))
+arr = input().split()
+width = int(arr[0])
+height = int(arr[1])
+if(width <= 0 or height <= 0):
+    print('INVALID')
+else:
+    r = Rectangle(int(arr[0]), int(arr[1]), arr[2])
+    print(r.perimeter(), end=' ')
+    print(r.area(), end=' ')
+    print(r.color())
